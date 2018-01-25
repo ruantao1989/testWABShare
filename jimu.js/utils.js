@@ -3950,7 +3950,7 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
     var head = query("head")[0];
 
     mo.createMetaTag(head, "og:url", mo.getBaseHrefUrl(appConfig.portalUrl));
-    mo.createMetaTag(head, "og:type", "website");
+    mo.createMetaTag(head, "og:type", "article");
     mo.createMetaTag(head, "og:title", appConfig.title + " | " + appConfig.subtitle);
     mo.createMetaTag(head, "og:description", "Sharing web app: " + appConfig.title + "/n@ArcGISOnline");
     mo.createMetaTag(head, "og:image", mo.getLaunchBaseUrl(appConfig.portalUrl) + "/" + appConfig.logo);
