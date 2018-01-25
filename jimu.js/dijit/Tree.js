@@ -17,7 +17,7 @@
 define(['dojo/_base/declare',
   'dijit/_WidgetBase',
   'dijit/_TemplatedMixin',
-  'dojo/text!./templates/_TreeNode.html',
+  'dojo/text!./templates/TreeNode.html',
   'dojo/_base/lang',
   'dojo/_base/html',
   'dojo/_base/array',
@@ -33,9 +33,9 @@ define(['dojo/_base/declare',
 function(declare, _WidgetBase, _TemplatedMixin, tnTemplate, lang, html, array,
   dojoEvent, query, aspect, on, Evented, registry, DojoTree, jimuUtils) {
   /*jshint unused: false*/
-  var JimuTreeNode = declare([DojoTree._TreeNode, Evented], {
+  var JimuTreeNode = declare([DojoTree.TreeNode, Evented], {
     templateString: tnTemplate,
-    declaredClass: 'jimu._TreeNode',
+    declaredClass: 'jimu.TreeNode',
 
     //options:
     isLeaf: false,
