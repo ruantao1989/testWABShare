@@ -3948,6 +3948,10 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
 
   mo.buildOpenGraphTags = function (appConfig) {
     var head = query("head")[0];
+    var metaNodes = query('meta', head);
+    array.forEach(metaNodes, function(node) {
+      html.destroy(node);
+    });//remove all
 
     mo.createMetaTag(head, "og:url", mo.getBaseHrefUrl(appConfig.portalUrl));
     mo.createMetaTag(head, "og:type", "website");
@@ -3956,7 +3960,6 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
     mo.createMetaTag(head, "og:image", mo.getLaunchBaseUrl(appConfig.portalUrl) + "/" + appConfig.logo);
   };
   mo.createMetaTag = function (head, id, content) {
-    // will overwrite itself, if set multi times
     html.create('meta', {
       "id": id,
       "name": id,

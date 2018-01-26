@@ -29,7 +29,7 @@ define([
   'dojo/store/Observable',
   'dijit/tree/ObjectStoreModel',
   'jimu/utils',
-  'jimu/dijit/Tree',
+  'jimu/dijit/_Tree',
   'jimu/dijit/LoadingShelter'
 ],
 function(declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, Evented, lang, html,

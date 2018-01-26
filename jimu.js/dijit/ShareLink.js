@@ -810,10 +810,10 @@ define(['dojo/_base/declare',
       },
 
       _toFacebook: function() {
-        var a = "http://www.facebook.com/sharer/sharer.php?s\x3d100\x26" +//p[url]\x3d
+        var a = "http://www.facebook.com/sharer/sharer.php?" +//p[url]\x3d
           "u=" + encodeURIComponent(this.baseHrefUrl) +
           "&t=" + encodeURIComponent(jimuUtils.stripHTML(this.socialNetworkTitle(this._appTitle)));
-        window.open(a, "_blank");
+        window.open(a, "", "toolbar=0,status=0,width=626,height=436");
       },
       _toTwitter: function() {
         var shareStr = dojoString.substitute(this.share.shareTwitterTxt, {
@@ -822,7 +822,7 @@ define(['dojo/_base/declare',
         var url = this.baseHrefUrl;
         //var title = "&text=" + this.socialNetworkTitle(this._appTitle);
         window.open("http://twitter.com/home?status\x3d" +
-          encodeURIComponent(shareStr + url + "\n@ArcGISOnline"), "_blank");
+          encodeURIComponent(shareStr + url + "\n@ArcGISOnline"), "", "toolbar=0,status=0,width=626,height=436");
       },
       _toEmail: function() {
         var a = "mailto:?subject\x3d" + dojoString.substitute(this.share.shareEmailSubject, {
@@ -839,7 +839,7 @@ define(['dojo/_base/declare',
       _toGooglePlus: function() {
         var link = this.baseHrefUrl;
         var url = 'http://plus.google.com/share?url=' + encodeURIComponent(link);
-        window.open(url, "_blank");
+        window.open(url,  "", "toolbar=0,status=0,width=626,height=436");
       },
       _toggleLinkOptions: function() {
         var parentNode = this.domNode.parentNode || this.domNode.parentElement;

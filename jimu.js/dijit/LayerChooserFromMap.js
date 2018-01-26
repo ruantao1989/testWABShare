@@ -30,7 +30,7 @@ define([
     'dojo/_base/html',
     'dojo/_base/array',
     'jimu/utils',
-    'jimu/dijit/Tree',
+    'jimu/dijit/_Tree',
     'jimu/LayerInfos/LayerInfos',
     'jimu/dijit/LoadingIndicator'
   ],

@@ -26,7 +26,7 @@ define([
     'dojo/store/Memory',
     'dojo/store/Observable',
     'dijit/tree/ObjectStoreModel',
-    'jimu/dijit/Tree',
+    'jimu/dijit/_Tree',
     'jimu/DataSourceManager'
   ],
   function(Evented, lang, html, array, declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, Memory,
