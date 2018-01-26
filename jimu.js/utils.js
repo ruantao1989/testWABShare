@@ -3948,21 +3948,30 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
 
   mo.buildOpenGraphTags = function (appConfig) {
     var head = query("head")[0];
-    var metaNodes = query('meta', head);
-    array.forEach(metaNodes, function(node) {
-      html.destroy(node);
-    });//remove all
-
+    // var metaNodes = query('meta', head);
+    // array.forEach(metaNodes, function(node) {
+    //   html.destroy(node);
+    // });//remove all
     mo.createMetaTag(head, "og:url", mo.getBaseHrefUrl(appConfig.portalUrl));
     mo.createMetaTag(head, "og:type", "website");
     mo.createMetaTag(head, "og:title", appConfig.title + " | " + appConfig.subtitle);
     mo.createMetaTag(head, "og:description", "Sharing web app: " + appConfig.title + "/n@ArcGISOnline");
     mo.createMetaTag(head, "og:image", mo.getLaunchBaseUrl(appConfig.portalUrl) + "/" + appConfig.logo);
+
+    mo.createMetaTag(head, "twitter:card", "summary");
+    mo.createMetaTag(head, "twitter:creator" ,"@arcgisonline");
+    mo.createMetaTag(head, "twitter:url", mo.getBaseHrefUrl(appConfig.portalUrl));
+    mo.createMetaTag(head, "twitter:title", appConfig.title + " | " + appConfig.subtitle);
+    mo.createMetaTag(head, "twitter:description", "Sharing web app: " + appConfig.title + "/n@ArcGISOnline");
+    mo.createMetaTag(head, "twitter:domain", "arcgis.com");
   };
   mo.createMetaTag = function (head, id, content) {
+    var node = query("meta[property='"+id+"']",head);
+    if(node && node[0]){
+      html.destroy(node[0]);
+    }
+
     html.create('meta', {
-      "id": id,
-      "name": id,
       "property": id,
       "content": content
     }, head);
