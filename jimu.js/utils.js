@@ -3964,6 +3964,26 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
     mo.createMetaTag(head, "twitter:title", appConfig.title + " | " + appConfig.subtitle);
     mo.createMetaTag(head, "twitter:description", "Sharing web app: " + appConfig.title + "/n@ArcGISOnline");
     mo.createMetaTag(head, "twitter:domain", "arcgis.com");
+
+    var content = {
+      scrape: true,
+      id : mo.getBaseHrefUrl(appConfig.portalUrl)
+    }
+    esriRequest({
+      url: "https://graph.facebook.com",
+      handleAs: 'json',
+      content: content,
+      callbackParamName: 'callback'
+    }, {
+      usePost: true
+    }).then(lang.hitch(this, function(res) {
+      //def.resolve(res);
+      console.error(res);
+    }), lang.hitch(this, function(err) {
+      console.error(err);
+      //def.reject(err);
+    }));
+    //return def;
   };
   mo.createMetaTag = function (head, id, content) {
     var node = query("meta[property='"+id+"']",head);
