@@ -95,7 +95,17 @@
 			//     loading.appendChild(progress);
 			//   }
 			//   progress.style.width = (((i - 1)/count) * 100) + '%';
-			// }
+      // }
+      var meta = document.createElement("meta");
+      var a = document.createAttribute("property");
+      a.value = "og:title";
+      meta.setAttributeNode(a);
+
+      var b = document.createAttribute("content");
+      b.value = "7777788888";
+      meta.setAttributeNode(b);
+
+      document.getElementsByTagName('head')[0].appendChild(meta);
 		</script>
 	</head>
 	<body class="claro jimu-main-font">
