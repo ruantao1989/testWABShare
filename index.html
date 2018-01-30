@@ -3,20 +3,23 @@
 	<head>
     <script>
                 //test
-                document.onreadystatechange = function (e) {
-                  if (document.readyState === 'complete') {
-                    var meta = document.createElement("meta");
-                    var a = document.createAttribute("property");
-                    a.value = "og:title";
-                    meta.setAttributeNode(a);
+                // document.onreadystatechange = function (e) {
+                //   if (document.readyState === 'complete') {
+                //     var meta = document.createElement("meta");
+                //     var a = document.createAttribute("property");
+                //     a.value = "og:title";
+                //     meta.setAttributeNode(a);
 
-                    var b = document.createAttribute("content");
-                    b.value = "7777788888";
-                    meta.setAttributeNode(b);
+                //     var b = document.createAttribute("content");
+                //     b.value = "7777788888";
+                //     meta.setAttributeNode(b);
 
-                    document.getElementsByTagName('head')[0].appendChild(meta);
-                  }
-                };
+                //     document.getElementsByTagName('head')[0].appendChild(meta);
+                //   }
+                // };
+      document.open();
+      document.write('<meta property="og:title" content="00000000000000"/>');
+      document.close();
     </script>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -113,6 +116,9 @@
 			//   }
 			//   progress.style.width = (((i - 1)/count) * 100) + '%';
       // }
+      document.open();
+      document.write('<meta property="og:title" content="3333333333333"/>');
+      document.close();
 		</script>
 	</head>
 	<body class="claro jimu-main-font">
